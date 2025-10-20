@@ -1,0 +1,18 @@
+{
+	"ulid": "01K80V956B1QXGVS9JS0QC1QDP",
+	"minTime": 1760954403141,
+	"maxTime": 1760961600000,
+	"stats": {
+		"numSamples": 461640,
+		"numFloatSamples": 461640,
+		"numSeries": 963,
+		"numChunks": 3848
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01K80V956B1QXGVS9JS0QC1QDP"
+		]
+	},
+	"version": 1
+}
