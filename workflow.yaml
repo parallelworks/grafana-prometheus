@@ -9,6 +9,7 @@ sessions:
 
 jobs:
   run_agent:
+    early-cancel: any-job-failed
     ssh:
       remoteHost: ${{ inputs.resource.ip }}
     steps:
