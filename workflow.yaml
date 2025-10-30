@@ -143,3 +143,16 @@ jobs:
       admin_password:
         label: Admin Password
         type: password
+      advanced_settings:
+        type: group
+        label: Advanced Settings
+        collapsed: true
+        items:
+          repository:
+            type: string
+            label: Repository
+            default: https://github.com/parallelworks/grafana-prometheus.git
+          repository_branch:
+            type: string
+            label: Repository Branch
+            default: main
