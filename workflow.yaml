@@ -142,6 +142,10 @@ jobs:
         autoselect: true
         include-workspace: false
         tooltip: Resource to run the service
+      rundir:
+        label: Run Directory
+        default: ~/grafana-prometheus
+        type: string
       admin_password:
         label: Admin Password
         type: password
