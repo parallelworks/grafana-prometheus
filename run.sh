@@ -7,13 +7,13 @@ sudo chown -R 472:472 ./data/grafana
 sudo chown -R 65534:65534 ./data/prometheus
 
 echo "[1/3] Pulling images..."
-docker compose pull
+sudo docker compose pull
 
 echo "[2/3] Starting stack..."
-docker compose up -d
+sudo docker compose up -d
 
 echo "[3/3] Status:"
-docker compose ps
+sudo docker compose ps
 
 echo
 echo "✅ Up!"
