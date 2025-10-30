@@ -20,7 +20,7 @@ jobs:
     ssh:
       remoteHost: ${{ inputs.resource.ip }}
     steps:
-      - name: Prepare job directory
+      - name: Clone Repository
         run: |
           set -x
           mkdir -p $(dirname ${{ inputs.rundir }})
