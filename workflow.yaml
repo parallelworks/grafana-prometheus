@@ -41,6 +41,9 @@ jobs:
           cp .env.sample .env
           sed -i "s|__BASE_PATH__|${basepath}|g" .env
           sed -i "s|__ADMIN_PASSWORD__|${{ inputs.admin_password }}|g" .env
+          # Env file
+          cp docker-compose.yml.template docker-compose.yml
+          sed -i "s|__BASE_PATH__|${basepath}|g" docker-compose.yml
 
   wait_and_run_cleanup:
     needs:
