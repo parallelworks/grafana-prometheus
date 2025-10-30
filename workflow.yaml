@@ -13,14 +13,14 @@ jobs:
     ssh:
       remoteHost: ${{ inputs.resource.ip }}
     steps:
-      - name: Clone repository
+      - name: Run Agent
         run: pw agent start-existing --server=${PW_PLATFORM_HOST} -t=controller --experimental-prometheus-exporter --experimental-prometheus-exporter-port 9091 -n ${{ inputs.resource.name }}
 
   prepare_job_directory:
     ssh:
       remoteHost: ${{ inputs.resource.ip }}
     steps:
-      - name: Clone Repository
+      - name: Prepare job directory
         run: |
           mkdir -p $(dirname ${{ inputs.rundir }})
           git clone -b ${{ inputs.advanced_settings.repository_branch }} ${{ inputs.advanced_settings.repository }} ${{ inputs.rundir }}
@@ -47,12 +47,12 @@ jobs:
     ssh:
       remoteHost: ${{ inputs.resource.ip }}
     steps:
-      - name: Clone repository
+      - name: Wait and run cleanup
         run: |
           cd ${{ inputs.rundir }}
-          echo "$(date) Waiting for CANCEL file..."
           while [ ! -f "CANCEL" ]; do
-              sleep 2
+              echo "$(date) Waiting for CANCEL file..."
+              sleep 5
           done
           echo "(date) CANCEL file detected!"
           rm -f CANCEL
