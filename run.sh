@@ -2,6 +2,8 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+sudo systemctl start docker
+
 mkdir -p ./data/prometheus ./data/grafana
 sudo chown -R 472:472 ./data/grafana
 sudo chown -R 65534:65534 ./data/prometheus
