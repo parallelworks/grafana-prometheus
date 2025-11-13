@@ -9,4 +9,4 @@ providers:
     options:
       path: /etc/grafana/provisioning/dashboards
       # optional:
-      foldersFromFilesStructure: true
+      # foldersFromFilesStructure: true
