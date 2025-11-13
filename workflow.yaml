@@ -38,7 +38,7 @@ jobs:
           cp nginx/nginx.conf.template nginx/nginx.conf
           sed -i "s|__BASE_PATH__|${basepath}|g" nginx/nginx.conf
           # Env file
-          cp .env.sample .env
+          cp env.sample .env
           sed -i "s|__BASE_PATH__|${basepath}|g" .env
           sed -i "s|__ADMIN_PASSWORD__|${{ inputs.admin_password }}|g" .env
           # Env file
